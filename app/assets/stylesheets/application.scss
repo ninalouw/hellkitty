@@ -14,4 +14,58 @@
  *= require_self
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
+@import 'bootstrap_overrides';
+@import 'colours';
+
+@font-face {
+    font-family: 'Bitter';
+    src: url('/assets/bitter-regular-webfont.woff2') format('woff2'),
+         url('/assets/bitter-regular-webfont.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Bitter Bold';
+    src: url('/assets/bitter-bold-webfont.woff2') format('woff2'),
+         url('/assets/bitter-bold-webfont.woff') format('woff');
+    font-weight:bold;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/assets/proxima-nova-regular-webfont.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('/assets/proxima-nova-bold-webfont.woff2') format('woff2'),
+         url('/assets/proxima-nova-bold-webfont.woff2') format('woff2');
+    font-weight:bold;
+    font-style:normal;
+}
+
+
+.navbar-brand img {
+  width: 98px;
+  height: 21px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Bitter', 'serif';
+    font-weight: normal;
+}
+p {
+    font-family: 'Proxima Nova', 'sans-serif';
+    font-weight: normal;
+}
+body {
+    background: $off-white;
+}
+.btn-primary {
+    color: $white;
+}
+hr {
+    border: 1px solid $yellow;
+    margin:0px;
+}
