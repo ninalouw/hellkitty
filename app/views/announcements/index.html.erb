@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Announcements</h1>
+        </div>
+    </div>
+
+    <div class="announcements row">
+        <div class="col-md-12">
+            <% @announcements.each do |p| %>
+                <%= link_to p.title, announcement_path(p) %>
+                    <hr>
+                    <% end %>
+        </div>
+    </div>
+</div>

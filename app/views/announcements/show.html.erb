@@ -1,0 +1,36 @@
+
+<!-- announcement partial, everything related to my announcement -->
+<div class ="container-fluid">
+    <div class = "row">
+      <div class = "col-md-12">
+        <h2><%= @announcement.title %></h2>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col-md-2">
+       <p>By: &nbsp<%#= @announcement.user_full_name %></p>
+      </div>
+      <div class = "col-md-10">
+        <%= @announcement.created_at.strftime("%d %b %Y") %>
+      </div>
+    </div>
+
+
+    <div class = "row">
+      <div class = "col-md-12 announcement-body">
+        <%= @announcement.body %>
+      </div>
+    </div>
+
+
+    <div class = "row">
+      <div class = "col-md-12">
+      <#% if can? :manage, @announcement  %>
+        <%= link_to 'Edit', edit_announcement_path(@announcement),class: 'btn btn-primary' %>
+        <%= link_to 'Delete', announcement_path(@announcement), method: :delete,
+                                              data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+      <#% end %>
+     </div>
+    </div>
+</div>
