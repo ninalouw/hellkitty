@@ -14,10 +14,10 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.new(announcement_params)
     # @announcement.user = current_user
     if @announcement.save
-        flash[:notice] = 'New announcement created!'
+        flash[:success] = 'New announcement created!'
         redirect_to announcement_path(@announcement)
     else
-      flash.now[:alert] = 'Please see errors below'
+      flash[:error] = 'Please see errors below'
       render :new
     end
   end
@@ -40,10 +40,10 @@ class AnnouncementsController < ApplicationController
   def update
     # find_announcement method gets called here
     if @announcement.update(announcement_params)
-        flash[:notice] = 'Announcement updated'
+        flash[:success] = 'Announcement updated!'
         redirect_to announcement_path(@announcement)
     else
-        flash.now[:alert] = 'Please see errors below!'
+        flash[:error] = 'Please see errors below!'
         render :edit
     end
   end

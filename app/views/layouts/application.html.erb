@@ -10,9 +10,7 @@
 
   <body>
         <%= render 'layouts/navigation' %>
-          <div class="container-fluid">
-            <%= flash[:notice] || flash[:alert] %>
-          </div>
+        <%= render 'layouts/flash_messages', flash: flash %>
     <%= yield %>
   </body>
 </html>

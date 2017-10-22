@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/announcements" => "announcements#create", as: :announcements
   get "/announcements/:id" => "announcements#show", as: :announcement
   get "/announcements" => "announcements#index"
-  get "/announcements/:id/edit" => "announcements#edit"
+  get "/announcements/:id/edit" => "announcements#edit", as: :edit_announcement
   patch "/announcements/:id" => "announcements#update"
   delete "/announcements/:id" => "announcements#destroy"
 end

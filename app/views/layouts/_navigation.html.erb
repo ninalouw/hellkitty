@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-faded">
+    <span><a class="navbar-brand logo-text" href="#"><img class="logo" src="" alt="">Hellkitty Studios</a></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <%= link_to 'Index', announcements_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Add New', new_announcement_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                Pia Guerra
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">About</a>
+                    <a class="dropdown-item" href="#">Gallery</a>
+                    <a class="dropdown-item" href="#">Store</a>
+                    <a class="dropdown-item" href="#">Contact</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                Ian Boothby
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">About</a>
+                    <a class="dropdown-item" href="#">Portfolio</a>
+                    <a class="dropdown-item" href="#">Store</a>
+                    <a class="dropdown-item" href="#">Contact</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button">Sign In</button>
+            <button class="btn btn-outline-info my-2 my-sm-0" type="button">Sign Up</button>
+        </form>
+    </div>
+</nav>
+<hr>
