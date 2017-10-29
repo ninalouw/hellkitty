@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   get "/announcements/:id/edit" => "announcements#edit", as: :edit_announcement
   patch "/announcements/:id" => "announcements#update"
   delete "/announcements/:id" => "announcements#destroy"
+
+  resources :users, only: [:new, :create]
+    resources :sessions, only: [:new, :create] do
+      delete :destroy, on: :collection
+  end
 end

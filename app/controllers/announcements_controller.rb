@@ -1,5 +1,5 @@
 class AnnouncementsController < ApplicationController
-#   before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user, except: [:index]
   before_action :find_announcement, only: [:show, :edit, :update, :destroy]
 #   before_action :authorize_access, only: [:edit, :update, :destroy]
 
@@ -12,7 +12,7 @@ class AnnouncementsController < ApplicationController
   # handles creating the announcement after the form has been submitted
   def create
     @announcement = Announcement.new(announcement_params)
-    # @announcement.user = current_user
+    @announcement.user = current_user
     if @announcement.save
         flash[:success] = 'New announcement created!'
         redirect_to announcement_path(@announcement)
