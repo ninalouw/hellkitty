@@ -1,7 +1,7 @@
 class AnnouncementsController < ApplicationController
   before_action :authenticate_user, except: [:index]
   before_action :find_announcement, only: [:show, :edit, :update, :destroy]
-#   before_action :authorize_access, only: [:edit, :update, :destroy]
+  before_action :authorize_access, only: [:show, :edit, :update, :destroy]
 
   # ACTIONS
   # creates new announcement, displays a form
@@ -66,10 +66,9 @@ class AnnouncementsController < ApplicationController
     params.require(:announcement).permit(:title, :body)
   end
 
-#   def authorize_access
-#     unless can? :manage, @announcement
-#       # head :unauthorized #this will send empty HTTP request
-#       redirect_to root_path, alert: 'Access Denied. You did not create this question!'
-#      end
-#   end
+  def authorize_access
+    unless can? :manage, @announcement
+      redirect_to root_path, alert: 'Access Denied.'
+     end
+  end
 end
