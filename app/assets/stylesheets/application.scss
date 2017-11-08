@@ -46,10 +46,15 @@
     font-style:normal;
 }
 
+$margin: 60px;
 
 .navbar-brand img {
-  width: 98px;
-  height: 21px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -80,6 +85,10 @@ hr {
 .portfolio-cards {
     margin-top:30px;
     margin-bottom: 30px;
+    @include line-margin;
+	&::after{
+        @include line-divider-sm;
+    }
     .card {
         margin-bottom:10px;
         background-color:$off-white;
@@ -91,6 +100,44 @@ hr {
                 cursor: pointer;
                 color: $dark-yellow;
             }
+        }
+    }
+}
+
+.featured {
+    @include line-margin;
+	&::after{
+        @include line-divider-sm;
+    }
+}
+
+.logos {
+    justify-content: space-around;
+    margin:$margin;
+    .logo-img {
+        width:20%;
+        height:20%;
+        padding:20px;
+    }
+}
+
+.announcements{
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+footer {
+    background-color: $yellow;
+    padding:$margin;
+    margin-top:$margin;
+    h4 {
+        padding-right:10px;
+    }
+    .fa {
+        color: $black;
+        padding:10px;
+        &:hover {
+            cursor: pointer;
+            color: $dark-yellow;
         }
     }
 }

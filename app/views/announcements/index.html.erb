@@ -1,4 +1,5 @@
 <div class="container">
+
     <div class="row portfolio-cards">
         <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 card-mobile'>
             <div class='card'>
@@ -28,58 +29,91 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row featured">
         <div class="col-md-12 col-lg-12 col-sm-6 col-xs-6">
-            <h2 class='text-center'>Featured In</h2>
+            <h1 class='text-center'>Featured In</h1>
+            <div class="row logos">
+                <img class="img-fluid logo-img" src='assets/eisner-logo.jpg' alt='logo image'>
+                <img class="img-fluid logo-img" src='assets/nib-logo.png' alt='logo image'>
+                <img class="img-fluid logo-img" src='assets/new-yorker-logo.png' alt='logo image'>
+                <img class="img-fluid logo-img" src='assets/harvey-logo.jpg' alt='logo image'>
+                <img class="img-fluid logo-img" src='assets/shuster-logo.jpg' alt='logo image'>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-6 col-xs-6">
-            <h2 class='text-center'>Recent Work</h2>
+            <h1 class='text-center'>Recent Work</h1>
+        </div>
+    </div>
+
+    <div class="row portfolio-cards d-flex justify-content-center">
+        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 card-mobile'>
+            <div class='card'>
+                <img class='img-fluid' src='assets/featured-work-1.jpg' alt='Card image'>
+                <div class='card-body'>
+                    <h4 class='card-title title'>Work Title</h4>
+                    <p class='card-text'>Lorem ipsum dolor sit amet, venenatis in velit vestibulum ut dapibus, velit rutrum est duis.</p>
+                    <button type='button' class='btn btn-primary'>View Gallery</button>
+                </div>
+            </div>
+        </div>
+        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 card-mobile'>
+            <div class='card'>
+                <img class='img-fluid' src='assets/featured-work-2.jpg' alt='Card image'>
+                <div class='card-body'>
+                    <h4 class='card-title title'>Work Title</h4>
+                    <p class='card-text'>Lorem ipsum dolor sit amet, venenatis in velit vestibulum ut dapibus, velit rutrum est duis.</p>
+                    <button type='button' class='btn btn-primary'>View Gallery</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-6 col-xs-6">
-            <h2 class='text-center'>Announcements</h2>
+            <h1 class='text-center'>Announcements</h1>
         </div>
     </div>
 
-    <% @announcements.each do |p| %>
-        <% if can? :manage, p  %>
-           <h2> <%= link_to p.title, announcement_path(p) %> </h2>
-        <% else %>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>
-                    <%= p.title %>
-                </h2>
-            </div>
-        </div>
-        <% end %>
-        <div class = "row">
-            <div class = "col-md-2">
-            <p>By: &nbsp<%= p.user_full_name %></p>
-            </div>
-            <div class = "col-md-10">
-                <%= p.created_at.strftime("%d %b %Y") %>
-            </div>
-        </div>
-        <div class = "row">
-            <div class = "col-md-12 announcement-body">
-                <%= p.body %>
-            </div>
-        </div>
-        <div class = "row">
-            <div class = "col-md-12">
+    <div class="announcements">
+        <% @announcements.each do |p| %>
+        <div class="announcement">
             <% if can? :manage, p  %>
-                <%= link_to 'Edit', edit_announcement_path(p),class: 'btn btn-primary' %>
-                <%= link_to 'Delete', announcement_path(p), method: :delete,
-                                                    data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
-            <% end %>
+            <h2> <%= link_to p.title, announcement_path(p) %> </h2>
+            <% else %>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>
+                        <%= p.title %>
+                    </h2>
+                </div>
             </div>
-        </div>
-            
-    <% end %>
+            <% end %>
+            <div class = "row">
+                <div class = "col-md-2">
+                <p>By: &nbsp<%= p.user_full_name %></p>
+                </div>
+                <div class = "col-md-10">
+                    <%= p.created_at.strftime("%d %b %Y") %>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-md-12 announcement-body">
+                    <%= p.body %>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-md-12">
+                <% if can? :manage, p  %>
+                    <%= link_to 'Edit', edit_announcement_path(p),class: 'btn btn-primary' %>
+                    <%= link_to 'Delete', announcement_path(p), method: :delete,
+                                                        data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+                <% end %>
+                </div>
+            </div>
+        </div>  
+        <% end %>
+    </div>
 </div>

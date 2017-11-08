@@ -36,7 +36,7 @@ $navbar-padding-y: 2rem;
 @import 'bootstrap/variables';
 
 @import 'bootstrap';
-//@import 'mixins';
+@import 'mixins';
 
 button.btn {
   cursor: pointer;
