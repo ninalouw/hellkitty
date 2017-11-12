@@ -20,10 +20,10 @@
                 Pia Guerra
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">About</a>
+                    <%= link_to 'About', about_pia_path, class: 'dropdown-item' %>
                     <a class="dropdown-item" href="#">Gallery</a>
-                    <a class="dropdown-item" href="#">Store</a>
-                    <a class="dropdown-item" href="#">Contact</a>
+                    <%= link_to 'Store', store_path, class: 'dropdown-item' %>
+                    <%= link_to 'Contact', contact_path, class: 'dropdown-item' %>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -32,10 +32,10 @@
                 Ian Boothby
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">About</a>
+                    <%= link_to 'About', about_ian_path, class: 'dropdown-item' %>
                     <a class="dropdown-item" href="#">Portfolio</a>
-                    <a class="dropdown-item" href="#">Store</a>
-                    <a class="dropdown-item" href="#">Contact</a>
+                    <%= link_to 'Store', store_path, class: 'dropdown-item' %>
+                    <%= link_to 'Contact', contact_path, class: 'dropdown-item' %>
                 </div>
             </li>
         </ul>

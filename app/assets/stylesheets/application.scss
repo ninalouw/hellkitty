@@ -79,6 +79,11 @@ hr {
     margin:0px;
 }
 
+.margin {
+    margin-top:$margin;
+    margin-bottom: $margin;
+}
+
 .card-img-top{
     width:40%;
 }
@@ -104,12 +109,12 @@ hr {
     }
 }
 
-.featured {
-    @include line-margin;
-	&::after{
-        @include line-divider-sm;
-    }
-}
+// .featured {
+//     @include line-margin;
+// 	&::after{
+//         @include line-divider-sm;
+//     }
+// }
 
 .logos {
     justify-content: space-around;
