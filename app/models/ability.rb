@@ -14,6 +14,10 @@ class Ability
     can :manage, Announcement do |a|
       a.user == user
     end
+
+    can :manage, Gallery do |a|
+      a.user == user
+    end
     
     #
     # The first argument to `can` is the action you are giving the user

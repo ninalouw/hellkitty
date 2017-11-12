@@ -1,0 +1,40 @@
+<div class="col-md-12 col-lg-12">
+<%= form_for(@gallery, html: { multipart: true, class: 'form-horizontal' }) do |p| %>
+    <% if @gallery.errors.any? %>
+    <div class="bg-warning" id="error_explanation">
+    <h6><%= pluralize(@gallery.errors.count, "error") %> prohibited this announcement from being saved:</h6>
+        <ul>
+        <% @gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+    <div class="form-group row">
+        <div class="col-md-6 col-lg-6">
+        <%= p.label :title, class: 'control-label' %>
+        <%= p.text_field :title, class: 'form-control'%>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6 col-lg-6">
+        <%= p.label :category_id, class: 'control-label dropdown-label'%>
+        <%= p.collection_select :category_id, @category, :id, :title %>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6 col-lg-6">
+        <%= p.label :body, class: 'control-label' %>
+        <%= p.text_area :body, class: 'form-control'%>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6 col-lg-6">
+        <%= p.label :image, class: 'control-label' %>
+        <%= p.file_field :image %>
+        </div>
+    </div>
+    <%= p.submit class: 'btn btn-primary' %>
+    <% end %>
+</div>

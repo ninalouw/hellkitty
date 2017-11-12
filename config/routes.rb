@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   get "/announcements/:id/edit" => "announcements#edit", as: :edit_announcement
   patch "/announcements/:id" => "announcements#update"
   delete "/announcements/:id" => "announcements#destroy"
+  #galleries
+  get "/galleries/new" => "galleries#new", as: :new_gallery
+  post "/galleries" => "galleries#create", as: :galleries
+  get "/galleries/:id" => "galleries#show", as: :gallery
+  get "/galleries" => "galleries#index"
+  get "/galleries/:id/edit" => "galleries#edit", as: :edit_gallery
+  patch "/galleries/:id" => "galleries#update"
+  delete "/galleries/:id" => "galleries#destroy"
 
   # static pages
   get '/about-ian' => 'home#about_ian'

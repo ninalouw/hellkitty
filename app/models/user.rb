@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :announcements, dependent: :nullify
+  has_many :galleries, dependent: :nullify
 
   has_secure_password
 
