@@ -7,18 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <% if user_signed_in? %>
-                <li class="nav-item active">
-                    <%= link_to 'Index', announcements_path, class: 'nav-link' %>
-                </li>
-                <li class="nav-item">
-                    <%= link_to 'Add Announcement', new_announcement_path, class: 'nav-link' %>
-                </li>
-                <li class="nav-item">
-                    <%= link_to 'Add Gallery', new_gallery_path, class: 'nav-link' %>
-                </li>
-                <li class="nav-item">
-                    <%= link_to 'Add Portfolio', new_portfolio_path, class: 'nav-link' %>
-                </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                Add New
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to 'Home Page', announcements_path, class: 'nav-link' %>
+                    <%= link_to 'Add New Announcement', new_announcement_path, class: 'nav-link' %>
+                    <%= link_to 'Add New Gallery Item', new_gallery_path, class: 'nav-link' %>
+                    <%= link_to 'Add New Portfolio Item', new_portfolio_path, class: 'nav-link' %>
+                </div>
+            </li>
             <% end %>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"

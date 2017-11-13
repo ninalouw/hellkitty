@@ -13,6 +13,7 @@ class GalleriesController < ApplicationController
   # handles creating the gallery after the form has been submitted
   def create
     @gallery = Gallery.new(gallery_params)
+    @category = Category.all
     @gallery.user = current_user
     if @gallery.save
         flash[:success] = 'New gallery item created!'
@@ -31,6 +32,7 @@ class GalleriesController < ApplicationController
   # displays all the gallerys
   def index
     @galleries = Gallery.order(created_at: :desc)
+    @categories = Category.all
   end
 
   # gets a gallery for editing

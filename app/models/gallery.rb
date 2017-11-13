@@ -10,7 +10,7 @@ class Gallery < ApplicationRecord
   validates_attachment_file_name :image, matches: [/png\z/, /jpe?g\z/]
   validates :image, attachment_presence: true
   validates_with AttachmentPresenceValidator, attributes: :image
-  validates_with AttachmentSizeValidator, attributes: :image, less_than: 1.megabytes
+  validates_with AttachmentSizeValidator, attributes: :image, less_than: 5.megabytes
 
   def user_full_name
     if user

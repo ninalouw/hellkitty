@@ -1,56 +1,39 @@
 <div class="container">
-    <div class="galleries">
-        <% @galleries.each do |p| %>
-        <div class="gallery">
-            <% if can? :manage, p  %>
-            <h2> <%= link_to p.title, gallery_path(p) %> </h2>
-            <% else %>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>
-                        <%= p.title %>
-                    </h2>
-                </div>
-            </div>
-            <% end %>
+    <div class="gallery-heading text-center">
+        <h1>Gallery</h1>
+    </div>
 
-            <div class = "row">
-                <div class = "col-md-2">
-                <p>By: &nbsp<%= p.user_full_name %></p>
-                </div>
-                <div class = "col-md-10">
-                    <%= p.created_at.strftime("%d %b %Y") %>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>
-                        <%= p.category.title %>
-                    </h4>
-                </div>
-            </div>
-
-            <div class = "row">
-                <div class = "col-md-12 gallery-body">
-                    <%= p.body %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 gallery-body">
-                    <%= link_to image_tag(p.image.url(:large)), p.image.url %>
-                </div>
-            </div>
-            <div class = "row">
-                <div class = "col-md-12">
-                <% if can? :manage, p  %>
-                    <%= link_to 'Edit', edit_gallery_path(p),class: 'btn btn-info' %>
-                    <%= link_to 'Delete', gallery_path(p), method: :delete,
-                                                        data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+    <section class="filters">
+        <div class="filters-categories">
+            <p class="lead">Filter Comics by Category</p>
+            <div class="filters-toggles">
+                <% @categories.each do |p| %>
+                    <span class="filters-toggle active" data-category="<%p.id %>"><%= p.title %>
+                        <input type="checkbox" aria-label="Checkbox for following text input" checked>
+                    </span>
                 <% end %>
+            </div>
+        </div>
+    </section>
+
+    <div class="row gallery-cards">
+        <% @galleries.each do |p| %>
+        <div class='col-lg-4 col-md-4 col-sm-6 col-xs-6 card-mobile'>
+            <div class='card'>
+                <%= image_tag p.image.url(:large), class: 'img-fluid gallery-img' %>
+                <div class='card-body'>
+                    <h4 class='card-title'><%= p.title %></h4>
+                    <p class="text-muted"><%= p.category.title %></p>
+                    <p class='card-text'><%= p.body %></p>
+                    <% if can? :manage, p  %>
+                        <%= link_to 'Edit', edit_gallery_path(p),class: 'btn btn-info' %>
+                        <%= link_to 'Delete', gallery_path(p), method: :delete,
+                                                    data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+                    <% end %>
                 </div>
             </div>
-        </div>  
+        </div>
         <% end %>
     </div>
+
 </div>
