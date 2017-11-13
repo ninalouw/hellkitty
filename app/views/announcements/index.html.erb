@@ -72,48 +72,29 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-6 col-xs-6">
-            <h1 class='text-center'>Announcements</h1>
+        <div class="col-md-12 col-lg-12 col-sm-6 col-xs-6 text-center">
+            <h1>Announcements</h1>
         </div>
     </div>
 
-    <div class="announcements">
+    <div class="row portfolio-cards d-flex justify-content-center">
         <% @announcements.each do |p| %>
-        <div class="announcement">
-            <% if can? :manage, p  %>
-            <h2> <%= link_to p.title, announcement_path(p) %> </h2>
-            <% else %>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>
-                        <%= p.title %>
-                    </h2>
+            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 card-mobile'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h3 class='card-title title'><%= p.title %></h3>
+                        <p class="text-muted"><%= p.created_at.strftime("%d %b %Y") %></p>
+                        <p class="text-italic">By: &nbsp<%= p.user_full_name %></p>
+                        <p class='card-text'><%= p.body %></p>
+                        <% if can? :manage, p  %>
+                            <%= link_to 'Edit', edit_announcement_path(p),class: 'btn btn-info' %>
+                            <%= link_to 'Delete', announcement_path(p), method: :delete,
+                                                                data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+                        <% end %>
+                    </div>
                 </div>
             </div>
-            <% end %>
-            <div class = "row">
-                <div class = "col-md-2">
-                <p>By: &nbsp<%= p.user_full_name %></p>
-                </div>
-                <div class = "col-md-10">
-                    <%= p.created_at.strftime("%d %b %Y") %>
-                </div>
-            </div>
-            <div class = "row">
-                <div class = "col-md-12 announcement-body">
-                    <%= p.body %>
-                </div>
-            </div>
-            <div class = "row">
-                <div class = "col-md-12">
-                <% if can? :manage, p  %>
-                    <%= link_to 'Edit', edit_announcement_path(p),class: 'btn btn-info' %>
-                    <%= link_to 'Delete', announcement_path(p), method: :delete,
-                                                        data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
-                <% end %>
-                </div>
-            </div>
-        </div>  
         <% end %>
     </div>
+
 </div>

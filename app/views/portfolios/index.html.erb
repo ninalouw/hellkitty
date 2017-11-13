@@ -1,52 +1,45 @@
-<div class="container">
-    <div class="portfolios">
-        <% @portfolios.each do |p| %>
-        <div class="portfolio">
-            <% if can? :manage, p  %>
-            <h2> <%= link_to p.title, portfolio_path(p) %> </h2>
-            <% else %>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>
-                        <%= p.title %>
-                    </h2>
-                </div>
-            </div>
-            <% end %>
-
-            <div class = "row">
-                <div class = "col-md-2">
-                <p>By: &nbsp<%= p.user_full_name %></p>
-                </div>
-                <div class = "col-md-10">
-                    <%= p.created_at.strftime("%d %b %Y") %>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>
-                        <%= p.portfolio_category.title %>
-                    </h4>
-                </div>
-            </div>
-
-            <div class = "row">
-                <div class = "col-md-12 gallery-body">
-                    <%= p.body %>
-                </div>
-            </div>
-
-            <div class = "row">
-                <div class = "col-md-12">
-                <% if can? :manage, p  %>
-                    <%= link_to 'Edit', edit_portfolio_path(p),class: 'btn btn-info' %>
-                    <%= link_to 'Delete', portfolio_path(p), method: :delete,
-                                                        data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
-                <% end %>
-                </div>
-            </div>
-        </div>  
-        <% end %>
+<div class="container margin">
+    <div class="gallery-heading text-center">
+        <h1>Credits</h1>
     </div>
+
+    <section class="filters">
+        <div class="filters-categories">
+            <p class="lead">Filter Posts by Category</p>
+            <div class="filters-toggles">
+                <% @portfolio_categories.each do |p| %>
+                    <span class="filters-toggle active" data-category="<%p.id %>"><%= p.title %>
+                    <input type="checkbox" aria-label="Checkbox for following text input" checked>
+                </span>
+                    <% end %>
+            </div>
+        </div>
+    </section>
+    
+    <% @portfolio_categories.each do |c| %>
+        <div class="gallery-heading text-center">
+            <h2><%= c.title %></h2>
+        </div>
+        <div class="row d-flex justify-content-center">
+        <% @portfolios.each do |p| %>
+            <% if c.id === p.portfolio_category.id %>
+                <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 card-mobile'>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <h3 class='card-title title'><%= p.title %></h3>
+                            <p class="text-muted"><%= p.portfolio_category.title %></p>
+                            <p class="text-muted"><%= p.created_at.strftime("%d %b %Y") %></p>
+                            <p class='card-text'><%= p.body %></p>
+                            <% if can? :manage, p  %>
+                                <%= link_to 'Edit', edit_portfolio_path(p),class: 'btn btn-info' %>
+                                <%= link_to 'Delete', portfolio_path(p), method: :delete,
+                                                                    data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+        </div>
+    <% end %>
 </div>

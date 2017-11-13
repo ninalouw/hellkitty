@@ -13,6 +13,7 @@ class PortfoliosController < ApplicationController
   # handles creating the portfolio after the form has been submitted
   def create
     @portfolio = Portfolio.new(portfolio_params)
+    @portfolio_category = PortfolioCategory.all
     @portfolio.user = current_user
     if @portfolio.save
         flash[:success] = 'New Portfolio item created!'
@@ -30,7 +31,8 @@ class PortfoliosController < ApplicationController
 
   # displays all the portfolios
   def index
-    @portfolios = Portfolio.order(created_at: :desc)
+    @portfolios = Portfolio.order(:portfolio_category_id)
+    @portfolio_categories = PortfolioCategory.order(:id)
   end
 
   # gets a portfolio for editing
