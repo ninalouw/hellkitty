@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
   categories = Category.create([{ title: 'Comics' },{ title: 'Cover Art' },{ title: 'Satire' }, { title: 'Political Satire' }])
+
+  portfolio_categories = PortfolioCategory.create([{ title: 'Publishing' },{ title: 'Broadcasting' },{ title: 'Appearances' }])

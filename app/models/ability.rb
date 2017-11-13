@@ -18,6 +18,10 @@ class Ability
     can :manage, Gallery do |a|
       a.user == user
     end
+
+    can :manage, Portfolio do |a|
+      a.user == user
+    end
     
     #
     # The first argument to `can` is the action you are giving the user

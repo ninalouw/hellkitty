@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112215148) do
+ActiveRecord::Schema.define(version: 20171113000446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,23 @@ ActiveRecord::Schema.define(version: 20171112215148) do
     t.index ["user_id"], name: "index_galleries_on_user_id", using: :btree
   end
 
+  create_table "portfolio_categories", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "user_id"
+    t.integer  "portfolio_category_id"
+    t.index ["portfolio_category_id"], name: "index_portfolios_on_portfolio_category_id", using: :btree
+    t.index ["user_id"], name: "index_portfolios_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -59,4 +76,6 @@ ActiveRecord::Schema.define(version: 20171112215148) do
   add_foreign_key "announcements", "users"
   add_foreign_key "galleries", "categories"
   add_foreign_key "galleries", "users"
+  add_foreign_key "portfolios", "portfolio_categories"
+  add_foreign_key "portfolios", "users"
 end

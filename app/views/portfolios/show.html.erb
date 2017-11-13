@@ -1,43 +1,38 @@
 <div class ="container">
     <div class = "row">
       <div class = "col-md-12">
-        <h2><%= @gallery.title %></h2>
+        <h2><%= @portfolio.title %></h2>
       </div>
     </div>
 
     <div class = "row">
       <div class = "col-md-2">
-       <p>By: &nbsp<%= @gallery.user_full_name %></p>
+       <p>By: &nbsp<%= @portfolio.user_full_name %></p>
       </div>
       <div class = "col-md-10">
-        <%= @gallery.created_at.strftime("%d %b %Y") %>
+        <%= @portfolio.created_at.strftime("%d %b %Y") %>
       </div>
     </div>
 
       <div class="row">
         <div class="col-md-12">
           <h4>
-            <%= @gallery.category.title %>
+            <%= @portfolio.portfolio_category.title %>
           </h4>
         </div>
       </div>
       
     <div class = "row">
       <div class = "col-md-12 gallery-body">
-        <%= @gallery.body %>
+        <%= @portfolio.body %>
       </div>
     </div>
-        <div class="row">
-            <div class="col-md-12 gallery-body">
-                <%= link_to image_tag(@gallery.image.url(:large)), @gallery.image.url %>
-            </div>
-        </div>
 
     <div class = "row">
       <div class = "col-md-12">
-      <% if can? :manage, @gallery  %>
-        <%= link_to 'Edit', edit_gallery_path(@gallery),class: 'btn btn-info' %>
-        <%= link_to 'Delete', gallery_path(@gallery), method: :delete,
+      <% if can? :manage, @portfolio  %>
+        <%= link_to 'Edit', edit_portfolio_path(@portfolio),class: 'btn btn-info' %>
+        <%= link_to 'Delete', portfolio_path(@portfolio), method: :delete,
                                               data:{confirm: 'Are you sure you want to delete?'},class: 'btn btn-danger'  %>
       <% end %>
      </div>

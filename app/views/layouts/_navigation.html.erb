@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <%= link_to 'Add Gallery', new_gallery_path, class: 'nav-link' %>
                 </li>
+                <li class="nav-item">
+                    <%= link_to 'Add Portfolio', new_portfolio_path, class: 'nav-link' %>
+                </li>
             <% end %>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -24,8 +27,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <%= link_to 'About', about_pia_path, class: 'dropdown-item' %>
-                    <!-- <a class="dropdown-item" href="#">Gallery</a> -->
-                    <%= link_to 'Gallery', galleries_path, class: 'nav-link' %>
+                    <%= link_to 'Gallery', galleries_path, class: 'dropdown-item' %>
                     <%= link_to 'Store', store_path, class: 'dropdown-item' %>
                     <%= link_to 'Contact', contact_path, class: 'dropdown-item' %>
                 </div>
@@ -37,7 +39,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <%= link_to 'About', about_ian_path, class: 'dropdown-item' %>
-                    <a class="dropdown-item" href="#">Portfolio</a>
+                    <%= link_to 'Portfolio', portfolios_path, class: 'dropdown-item' %>
                     <%= link_to 'Store', store_path, class: 'dropdown-item' %>
                     <%= link_to 'Contact', contact_path, class: 'dropdown-item' %>
                 </div>
@@ -46,7 +48,6 @@
         <form class="form-inline my-2 my-lg-0">
             <% if user_signed_in? %>
                 <button class="btn btn-outline-warning my-2 my-sm-0" type="button"><%= link_to 'SIGN OUT', sessions_path, method: :delete %></a></button>
-                <!-- <button class="btn btn-outline-warning my-2 my-sm-0" type="button"><%#= link_to 'PROFILE', edit_user_path(current_user)%></a></button> -->
             <% else %>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="button"><%= link_to 'SIGN IN', new_session_path %></a></button>
                 <button class="btn btn-outline-info my-2 my-sm-0" type="button"><%= link_to 'SIGN UP', new_user_path %></a></button>

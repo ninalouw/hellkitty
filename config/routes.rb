@@ -17,6 +17,14 @@ Rails.application.routes.draw do
   get "/galleries/:id/edit" => "galleries#edit", as: :edit_gallery
   patch "/galleries/:id" => "galleries#update"
   delete "/galleries/:id" => "galleries#destroy"
+  #portfolios
+  get "/portfolios/new" => "portfolios#new", as: :new_portfolio
+  post "/portfolios" => "portfolios#create", as: :portfolios
+  get "/portfolios/:id" => "portfolios#show", as: :portfolio
+  get "/portfolios" => "portfolios#index"
+  get "/portfolios/:id/edit" => "portfolios#edit", as: :edit_portfolio
+  patch "/portfolios/:id" => "portfolios#update"
+  delete "/portfolios/:id" => "portfolios#destroy"
 
   # static pages
   get '/about-ian' => 'home#about_ian'
