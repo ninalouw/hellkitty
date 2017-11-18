@@ -5,10 +5,8 @@ $(function () {
     });
 
     $('.btn-scroll').click(function(){
-        console.log('click');
         $this = $(this);
         var category = $this.data('category');
-        console.log(category);
         smoothScrollToTarget($('.line-header[data-category="' + category + '"]'));
     });
 
@@ -16,7 +14,6 @@ $(function () {
         //  scrolling function
         var $this = $(this);
         var wScroll = $this.scrollTop();
-        console.log(wScroll);
 
         if (wScroll > 500) {
             $('.back-to-top').removeClass('hidden');
