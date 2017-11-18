@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-6 col-xs-6 text-center margin">
-            <h1>
+            <h1 class="line-header">
                 <%= @title %>
             </h1>
         </div>
@@ -32,13 +32,23 @@
             <p>
                 Boothby is married to Y the Last Man co-creator and artist Pia Guerra.
             </p>
-            </p>
-        </div>
-        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
-            <span>
-                <h4>Twitter</h4>
-                <i class="fa fa-lg fa-twitter" aria-hidden="true"></i>
-            </span>
+         </div>
+        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 twitter-container">
+            <div class="row twitter-heading text-center">
+                    <h3>Twitter</h3>
+                    <i class="fa fa-lg fa-twitter" aria-hidden="true"></i>
+            </div>
+            <div class="row twitter-body">
+                <ul>
+                    <% cache('ian_public_tweets', expires_in: 6.hours) do %>
+                        <% TwitterApi.ian_public_tweets.each do |tweet| %>
+                            <li>
+                                <%= parsed_tweet tweet %>
+                            </li>
+                        <% end %>
+                    <% end %>
+                </ul>
+            </div>
         </div>
     </div>
 

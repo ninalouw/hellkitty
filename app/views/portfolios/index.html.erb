@@ -1,6 +1,6 @@
 <div class="container margin">
     <div class="gallery-heading text-center">
-        <h1>Credits</h1>
+        <h1 class="line-header">Credits</h1>
     </div>
 
     <section class="filters">
@@ -18,9 +18,9 @@
     
     <% @portfolio_categories.each do |c| %>
         <div class="gallery-heading text-center">
-            <h2><%= c.title %></h2>
+            <h2 class="line-header"><%= c.title %></h2>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div class="row credits-cards d-flex justify-content-center">
         <% @portfolios.each do |p| %>
             <% if c.id === p.portfolio_category.id %>
                 <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 card-mobile'>

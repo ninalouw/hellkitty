@@ -15,4 +15,6 @@
 
 # Ignore Byebug command history file.
 .byebug_history
- public/system/galleries/images/
+public/system/galleries/images/
+/config/initializers/app_keys.rb
+
