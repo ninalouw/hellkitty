@@ -120,6 +120,9 @@ hr {
     }
 }
 
+// .about-container{
+//     max-width: 1200px;
+// }
 .twitter-container {
     display: flex;
     flex-direction: column;
@@ -146,7 +149,7 @@ hr {
                 padding:15px;
                 margin:10px;
                 background-color: white;
-                border-radius: 1.5rem;
+                border-radius: 1.2rem;
             }
         }
     }
@@ -193,10 +196,10 @@ hr {
     .card {
         margin-bottom:10px;
         @include soft-shadow;
-        img{
-            width:287px;
-            height:287px;
-        }
+        // img{
+        //     width:287px;
+        //     height:287px;
+        // }
     }
 }
 
@@ -248,6 +251,40 @@ hr {
 .hidden {
     display: none;
 }
+
+//scrolling buttons
+.btn-scroll {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    display: inline-block;
+	padding: 8px 12px;
+	margin-right: 30px;
+	cursor: pointer;
+	line-height: 1.25rem;
+	min-height: 20px;
+	color: white;
+	transition: all 0.3s;
+    margin-bottom: 10px;
+    border-radius:0px;
+}
+
+.back-to-top {
+    .fa {
+    color: $yellow;
+    font-size: 1.5rem;
+    position: fixed;
+    right: 25px;
+    @media screen and (max-width: 420px){
+        right: 6px;
+    }
+	bottom: 40px;
+	cursor: pointer;
+        &.hidden {
+            display: none;
+        }
+    }
+}
+    
 
 footer {
     background-color: $yellow;
