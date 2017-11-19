@@ -43,7 +43,13 @@
     border-top: 2px solid $yellow;
     top: 24px;
     width: 50%;
-	max-width: 290px;
+    max-width: 290px;
+    @media screen and (max-width: 768px) {
+        width: calc(80% - 290px / 2);
+    }
+    @media screen and (max-width: 568px) {
+        width: calc(60% - 290px / 2);
+    }
 }
 //before
 @mixin line-right {

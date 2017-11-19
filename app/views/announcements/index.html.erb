@@ -8,9 +8,9 @@
                     <h4 class='card-title title' >Pia Guerra</h4>
                     <p class='card-text'>Pia Guerra is a Canadian comic book artist and cartoonist best known for her work as co-creator of DC/Vertigo's
                     Y - The Last Man. She has drawn for Black Canary, Hellblazer, Torchwood and Doctor Who, and is a regular contributor of cartoons for The Nib and The New Yorker.</p>
-                    <button type='button' class='btn btn-primary'>Meet Pia</button>
-                    <i class="fa fa-lg fa-tumblr" aria-hidden="true"></i>
-                    <i class="fa fa-lg fa-twitter" aria-hidden="true"></i>
+                    <%= link_to 'Meet Pia', about_pia_path, class: 'btn btn-primary' %>
+                    <a href="http://hkstudio.tumblr.com/"><i class="fa fa-lg fa-tumblr" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/@PiaGuerra"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -21,23 +21,33 @@
                     <h4 class='card-title title'>Ian Boothby</h4>
                     <p class='card-text'>Multiple Shuster Award, Harvey Award and Eisner Award nominee and an Eisner Award–winning comic book creator, Ian Boothby is best
                     known for his work as the lead writer on Simpsons Comics and Futurama Comics for Matt Groening's Bongo Comics.</p>
-                    <button type='button' class='btn btn-primary'>Meet Ian</button>
-                    <i class="fa fa-lg fa-tumblr" aria-hidden="true"></i>
-                    <i class="fa fa-lg fa-twitter" aria-hidden="true"></i>
+                    <%= link_to 'Meet Ian', about_ian_path, class: 'btn btn-primary' %>
+                    <a href="http://www.sneakydragon.com/"><i class="fa fa-lg fa-tumblr" aria-hidden="true"></i></a>
+                     <a href="https://twitter.com/@IanBoothby"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row featured">
-        <div class="text-center col-md-12 col-lg-12 col-sm-6 col-xs-6">
+    <div class="row featured margin">
+        <div class="text-center col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <h1 class='line-header'>Featured In</h1>
             <div class="row logos">
-                <img class="img-fluid logo-img" src='assets/eisner-logo.jpg' alt='logo image'>
-                <img class="img-fluid logo-img" src='assets/nib-logo.png' alt='logo image'>
-                <img class="img-fluid logo-img" src='assets/new-yorker-logo.png' alt='logo image'>
-                <img class="img-fluid logo-img" src='assets/harvey-logo.jpg' alt='logo image'>
-                <img class="img-fluid logo-img" src='assets/shuster-logo.jpg' alt='logo image'>
+                <a href="http://www.willeisner.com/the_eisnershpritz/eisner-awards/">
+                    <img class="img-fluid logo-img" src='assets/eisner-logo.jpg' alt='logo image'>
+                </a>
+                <a href="https://thenib.com/pia-guerra">
+                    <img class="img-fluid logo-img" src='assets/nib-logo.png' alt='logo image'>
+                </a>
+                <a href="https://www.newyorker.com/cartoons/issue-cartoons/cartoons-from-the-october-2-2017-issue">
+                    <img class="img-fluid ny-logo" src='assets/new-yorker-logo.png' alt='logo image'>
+                </a>
+                <a href="https://thenib.com/pia-guerra">
+                    <img class="img-fluid logo-img" src='assets/harvey-logo.jpg' alt='logo image'>
+                </a>
+                <a href="http://harveyawards.tripod.com/">
+                    <img class="img-fluid logo-img" src='assets/shuster-logo.jpg' alt='logo image'>
+                </a>
             </div>
         </div>
     </div>
@@ -53,9 +63,9 @@
             <div class='card'>
                 <img class='img-fluid' src='assets/featured-work-1.jpg' alt='Card image'>
                 <div class='card-body'>
-                    <h4 class='card-title title'>Work Title</h4>
+                    <h4 class='card-title title'>Futurama Cover</h4>
                     <p class='card-text'>Lorem ipsum dolor sit amet, venenatis in velit vestibulum ut dapibus, velit rutrum est duis.</p>
-                    <button type='button' class='btn btn-primary'>View Gallery</button>
+                    <%= link_to 'Gallery', galleries_path, class: 'btn btn-primary' %>
                 </div>
             </div>
         </div>
@@ -63,9 +73,9 @@
             <div class='card'>
                 <img class='img-fluid' src='assets/featured-work-2.jpg' alt='Card image'>
                 <div class='card-body'>
-                    <h4 class='card-title title'>Work Title</h4>
+                    <h4 class='card-title title'>Trump Satire</h4>
                     <p class='card-text'>Lorem ipsum dolor sit amet, venenatis in velit vestibulum ut dapibus, velit rutrum est duis.</p>
-                    <button type='button' class='btn btn-primary'>View Gallery</button>
+                    <%= link_to 'Gallery', galleries_path, class: 'btn btn-primary' %>
                 </div>
             </div>
         </div>

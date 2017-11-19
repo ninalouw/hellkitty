@@ -1,10 +1,10 @@
 class TwitterApi
     def self.pia_public_tweets
-        client.user_timeline("PiaGuerra", count: 20, exclude_replies: true, include_rts: false)
+        client.user_timeline("PiaGuerra", count: 18, exclude_replies: true, include_rts: false)
     end
 
     def self.ian_public_tweets
-        client.user_timeline("IanBoothby", count: 20, exclude_replies: true, include_rts: false)
+        client.user_timeline("IanBoothby", count: 18, exclude_replies: true, include_rts: false)
     end
 
     def self.client

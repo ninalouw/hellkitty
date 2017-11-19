@@ -57,6 +57,11 @@ $margin: 60px;
     padding: 0;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color:black;
+    font-size: 1.2rem;
+}
+
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Bitter', 'serif';
     font-weight: normal;
@@ -84,22 +89,48 @@ hr {
     margin-bottom: $margin;
 }
 
-.card-img-top{
-    width:40%;
-}
 .portfolio-cards {
-    margin-top:30px;
-    margin-bottom: 30px;
+    margin-top:$margin;
+    margin-bottom: $margin;
     .card {
+        .card-img-top{
+            width:40%;
+        }
         margin-bottom:10px;
         background-color:$off-white;
         border: 1px solid $off-white;
-        .fa {
-            color: $yellow;
-            padding:10px;
+        a {
+            .fa {
+                color: $yellow;
+                padding:10px;
+                &:hover {
+                    cursor: pointer;
+                    color: $dark-yellow;
+                }
+            } 
+        }
+    }
+}
+
+.about-cards {
+    margin-top:$margin;
+    margin-bottom: $margin;
+    .card {
+        .card-img-top{
+            width:80%;
+            border-radius: 10rem;
+        }
+        margin-bottom:10px;
+        background-color:$off-white;
+        border: 1px solid $off-white;
+    }
+    .card-text {
+        a {
+            color: black;
             &:hover {
                 cursor: pointer;
                 color: $dark-yellow;
+                text-decoration: underline;
             }
         }
     }
@@ -120,9 +151,6 @@ hr {
     }
 }
 
-// .about-container{
-//     max-width: 1200px;
-// }
 .twitter-container {
     display: flex;
     flex-direction: column;
@@ -131,6 +159,7 @@ hr {
         h3 {
             color: $blue;
         }
+        a{
         .fa {
             color: $blue;
             padding:10px;
@@ -138,6 +167,7 @@ hr {
                 cursor: pointer;
                 color: $med-blue;
             }
+        }
         }
     }
     .twitter-body{
@@ -171,12 +201,28 @@ hr {
 }
 
 .logos {
+    display: block;
     justify-content: space-around;
-    margin:$margin;
-    .logo-img {
-        width:20%;
-        height:20%;
-        padding:20px;
+    margin-top:80px;
+    margin-bottom:40px;
+    a {
+        text-decoration: none;
+        .ny-logo{
+            width:25%;
+            height:25%;
+            padding:10px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .logo-img {
+            width:15%;
+            height:15%;
+            padding:10px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
 
@@ -298,18 +344,50 @@ footer {
     h4 {
         padding-right:10px;
     }
-    .fa {
-        color: $black;
-        padding:10px;
-        &:hover {
-            cursor: pointer;
-            color: $dark-yellow;
+    a {
+        .fa {
+            color: $black;
+            padding:10px;
+            &:hover {
+                cursor: pointer;
+                color: $dark-yellow;
+            }
         }
     }
 }
 
 //mobile responsive
 @media screen and (max-width: 568px){
+    .portfolio-cards{
+        .card{
+            .card-img-top{
+                width:40%;
+                height:100%;
+            }
+        }
+    }
+    .about-container {
+        .col-md-6, .col-md-3 {
+            margin-top:15px;
+            margin-bottom:15px;
+        }
+        .about-cards {
+            .card {
+                .card-img-top{
+                    width:40%;
+                    height:100%;
+                }
+            }
+        }
+        .about-img-cont {
+            display: flex;
+            justify-content: center;
+            .about-img {
+                width:50%;
+                height:100%;
+            }
+        }
+    }
     .card-mobile {
         width:95%;
         margin:10px;
@@ -319,16 +397,19 @@ footer {
         height: 200px;
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .banner {
         display:inline-block;
     }
     h2 {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
     h3 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+    h4 {
+        font-size: 1.2rem;
     }
     .filters {
         margin:10px;
