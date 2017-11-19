@@ -59,7 +59,7 @@ $margin: 60px;
 
 .navbar-light .navbar-nav .nav-link {
     color:black;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -334,6 +334,16 @@ hr {
 .modal-content {
     border: 2px solid $yellow;
     @include soft-shadow;
+}
+
+.contact-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    i {
+        padding:0px;
+        padding-right:10px;
+    }
 }
     
 
