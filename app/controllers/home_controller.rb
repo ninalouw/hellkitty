@@ -17,4 +17,8 @@ class HomeController < ApplicationController
     def store
         render :store
     end
+
+    def signin
+        render :sign_in
+    end
 end

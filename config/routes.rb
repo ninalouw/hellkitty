@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get '/about-pia' => 'home#about_pia'
   get '/store' => 'home#store'
   get '/contact' => 'home#contact'
+  get '/signin' => 'home#signin'
   # users
   resources :users, only: [:new, :create]
     resources :sessions, only: [:new, :create] do
