@@ -28,6 +28,8 @@ gem 'twitter'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'popper_js', '~> 1.12.3'
 gem 'font-awesome-rails'
+gem 'cowsay'
+gem 'faker'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -59,3 +61,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+ruby "2.3.1"

@@ -6,6 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  categories = Category.create([{ title: 'Comics' },{ title: 'Cover Art' },{ title: 'Satire' }, { title: 'Political Satire' }])
+User.create!(first_name: 'Nina', last_name: 'Louw', email: 'ninalouw@mac.com', password: 'password', password_confirmation: 'password', admin: true)
+User.create!(first_name: 'Pia', last_name: 'Guerra', email: 'hellkitty3@hotmail.com', password: 'password', password_confirmation: 'password', admin: true)
+categories = Category.create([{ title: 'Comics' },{ title: 'Cover Art' },{ title: 'Satire' }, { title: 'Political Satire' }])
+portfolio_categories = PortfolioCategory.create([{ title: 'Publishing' },{ title: 'Broadcasting' },{ title: 'Appearances' }])
 
-  portfolio_categories = PortfolioCategory.create([{ title: 'Publishing' },{ title: 'Broadcasting' },{ title: 'Appearances' }])
+5.times do
+  a = Announcement.create({ title: Faker::Book.title,
+                    body: Faker::Hipster.paragraph,
+                    user_id: 1
+                    })
+end
+
+puts Cowsay.say('Generated 5 announcements', 'random')
+
+6.times do
+  p = Portfolio.create({ title: Faker::Book.title,
+                    body: Faker::Hipster.paragraph,
+                    user_id: 1,
+                    portfolio_category_id: rand(1) + 1
+                    })
+end
+
+puts Cowsay.say('Generated 6 portfolios', 'random')
+
+9.times do
+  p = Gallery.create({ title: Faker::Book.title,
+                    body: Faker::Book.title,
+                    user_id: 1,
+                    category_id: rand(2) + 1,
+                    image: "gallery-2.jpg"
+                    })
+end
+
+puts Cowsay.say('Generated 6 galleries', 'random')
