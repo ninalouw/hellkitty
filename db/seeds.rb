@@ -35,7 +35,7 @@ puts Cowsay.say('Generated 6 portfolios', 'random')
                     body: Faker::Book.title,
                     user_id: 1,
                     category_id: rand(2) + 1,
-                    image: "gallery-2.jpg"
+                    image: "assets/gallery-2.jpg"
                     })
 end
 
