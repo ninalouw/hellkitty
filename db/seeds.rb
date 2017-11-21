@@ -30,13 +30,13 @@
 
 # puts Cowsay.say('Generated 6 portfolios', 'random')
 
-9.times do
-  p = Gallery.create({ title: Faker::Book.title,
-                    body: Faker::Book.title,
-                    user_id: 1,
-                    category_id: rand(2) + 1,
-                    image: "assets/gallery-2.jpg"
-                    })
-end
+# 9.times do
+#   p = Gallery.create({ title: Faker::Book.title,
+#                     body: Faker::Book.title,
+#                     user_id: 1,
+#                     category_id: rand(2) + 1,
+#                     image: "assets/gallery-2.jpg"
+#                     })
+# end
 
-puts Cowsay.say('Generated 6 galleries', 'random')
+# puts Cowsay.say('Generated 6 galleries', 'random')

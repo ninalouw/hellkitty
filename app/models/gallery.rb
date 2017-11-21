@@ -13,7 +13,6 @@ class Gallery < ApplicationRecord
       :large => "400x400"
     },
     :storage => :s3,
-    :s3_credentials => "#{RAILS_ROOT}/config/app_keys.rb",
     :path => ":attachment/:id/:style.:extension",
     :bucket => 'hellkittyappdev'
 
