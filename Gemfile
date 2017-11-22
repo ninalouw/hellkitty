@@ -30,6 +30,7 @@ gem 'popper_js', '~> 1.12.3'
 gem 'font-awesome-rails'
 gem 'cowsay'
 gem 'faker'
+gem 'redis-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
