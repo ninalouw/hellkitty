@@ -22,9 +22,9 @@ $(function () {
         }
     });
 
-    function smoothScrollToTarget(target, adj = 0) {
+    function smoothScrollToTarget(target) {
         var startY = $(window).scrollTop();
-        var stopY = target.offset().top - adj;
+        var stopY = target.offset().top;
         var distance = stopY > startY ? stopY - startY : startY - stopY;
 
         if (distance < 100) {
