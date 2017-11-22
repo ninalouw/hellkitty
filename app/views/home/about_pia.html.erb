@@ -42,7 +42,7 @@
             </div>
             <div class="row twitter-body">
                 <ul>
-                    <% cache('pia_public_tweets', expires_in: 6.hours) do %>
+                    <% cache('pia_public_tweets', expires_in: 1.hour) do %>
                         <% TwitterApi.pia_public_tweets.each do |tweet| %>
                             <li>
                                 <%= parsed_tweet tweet %>
