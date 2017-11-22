@@ -5,16 +5,16 @@ class Gallery < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  # has_attached_file :image, styles: { small: "100x100", med: "200x200", large: "400x400" }, default_url: "/images/:style/gallery-1.jpg"
-  has_attached_file :image,
-    :styles => {
-      :thumb  =>  "100x100",
-      :medium => "200x200",
-      :large => "400x400"
-    },
-    :storage => :s3,
-    :path => ":attachment/:id/:style.:extension",
-    :bucket => 'hellkittyappdev'
+  has_attached_file :image, styles: { small: "100x100", med: "200x200", large: "400x400" }
+  # has_attached_file :image,
+  #   :styles => {
+  #     :thumb  =>  "100x100",
+  #     :medium => "200x200",
+  #     :large => "400x400"
+  #   },
+  #   :storage => :s3,
+  #   :path => ":attachment/:id/:style.:extension",
+  #   :bucket => 'hellkittyappdev'
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates_attachment_file_name :image, matches: [/png\z/, /jpe?g\z/]

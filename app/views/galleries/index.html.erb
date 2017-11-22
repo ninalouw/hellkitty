@@ -20,7 +20,7 @@
         <% @galleries.each do |p| %>
         <div class='category col-lg-4 col-md-4 col-sm-6 col-xs-6 card-mobile' data-category="<%= p.category.title %>">
             <div class='card'>
-                <%= image_tag p.image.url(:large), class: 'img-fluid gallery-img' %>
+                <%= image_tag(p.image.url(:large), class: 'img-fluid gallery-img') %>
                 <div class='card-body'>
                     <h4 class='card-title'><%= p.title %></h4>
                     <p class="text-muted"><%= p.category.title %></p>
