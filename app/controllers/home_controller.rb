@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+    require './lib/twitter_api'
 
     def about_ian
         @title = "Ian Boothby"
