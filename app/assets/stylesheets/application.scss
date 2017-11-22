@@ -20,28 +20,28 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('/assets/bitter-regular-webfont.woff2') format('woff2'),
-         url('/assets/bitter-regular-webfont.woff') format('woff');
+    src: font-url('bitter-regular-webfont.woff2') format('woff2'),
+         font-url('bitter-regular-webfont.woff') format('woff');
     font-weight:normal;
     font-style:normal;
 }
 @font-face {
     font-family: 'Bitter Bold';
-    src: url('/assets/bitter-bold-webfont.woff2') format('woff2'),
-         url('/assets/bitter-bold-webfont.woff') format('woff');
+    src: font-url('bitter-bold-webfont.woff2') format('woff2'),
+         font-url('bitter-bold-webfont.woff') format('woff');
     font-weight:bold;
     font-style:normal;
 }
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/assets/proxima-nova-regular-webfont.woff') format('woff');
+    src: font-url('proxima-nova-regular-webfont.woff') format('woff');
     font-weight:normal;
     font-style:normal;
 }
 @font-face {
     font-family: 'Proxima Nova Bold';
-    src: url('/assets/proxima-nova-bold-webfont.woff2') format('woff2'),
-         url('/assets/proxima-nova-bold-webfont.woff2') format('woff2');
+    src: font-url('proxima-nova-bold-webfont.woff2') format('woff2'),
+         font-url('proxima-nova-bold-webfont.woff2') format('woff2');
     font-weight:bold;
     font-style:normal;
 }
