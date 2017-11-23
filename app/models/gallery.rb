@@ -6,22 +6,10 @@ class Gallery < ApplicationRecord
   belongs_to :category
 
   has_attached_file :image, styles: { small: "100x100", med: "200x200", large: "400x400" }, default_url:"/images/:style/missing.png", :s3_protocol => :https
-  # has_attached_file :image,
-  #   :styles => {
-  #     :thumb  =>  "100x100",
-  #     :medium => "200x200",
-  #     :large => "400x400"
-  #   },
-  #   :storage => :s3,
-  #   :s3_credentials => "/config/application.yml",
-  #   :path => ":attachment/:id/:style.:extension",
-  #   :bucket => 'hellkittyappdev'
+
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  # validates_attachment_file_name :image, matches: [/png\z/, /jpe?g\z/]
-  # validates :image, attachment_presence: true
-  # validates_with AttachmentPresenceValidator, attributes: :image
-  # validates_with AttachmentSizeValidator, attributes: :image, less_than: 5.megabytes
+
 
   def user_full_name
     if user

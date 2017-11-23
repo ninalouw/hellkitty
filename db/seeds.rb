@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create!(first_name: 'Nina', last_name: 'Louw', email: 'ninalouw@mac.com', password: 'password', password_confirmation: 'password', admin: true)
-# User.create!(first_name: 'Pia', last_name: 'Guerra', email: 'hellkitty3@hotmail.com', password: 'password', password_confirmation: 'password', admin: true)
+User.create!(first_name: 'James', last_name: 'Finn', email: 'user@vanarts.com', password: 'vanarts', password_confirmation: 'vanarts', admin: true)
+User.create!(first_name: 'Ian', last_name: 'Boothby', email: 'hellkitty4@hotmail.com', password: 'password', password_confirmation: 'password', admin: true)
 # categories = Category.create([{ title: 'Comics' },{ title: 'Cover Art' },{ title: 'Satire' }, { title: 'Political Satire' }])
 # portfolio_categories = PortfolioCategory.create([{ title: 'Publishing' },{ title: 'Broadcasting' },{ title: 'Appearances' }])
 

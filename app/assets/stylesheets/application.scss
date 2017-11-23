@@ -431,4 +431,13 @@ footer {
     .card-text {
         font-size:0.8rem;
     }
+    footer {
+        .container{
+            .row{
+                // a {
+                    flex-direction:column;
+                // }
+            }
+        }
+    }
 }
